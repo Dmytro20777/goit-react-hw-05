@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Appi } from "../../Appi";
+import { GetTrendingDay } from "../../Appi";
 import { useLocation } from "react-router-dom";
 import { TrendingTodayList } from "../../components/TrendingTodayList/TrendingTodayList";
 import { Loading } from "../../components/Loading/Loading";
@@ -7,8 +7,9 @@ import { Error } from "../../components/Error/Error";
 import { Title } from "../../components/Title/Title";
 
 const HomePage = () => {
+  
 
-  const location = useLocation();
+  // const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -20,7 +21,7 @@ const HomePage = () => {
       try {
         setLoading(true);
         setError(false);
-        const fetchMovies = await Appi({abortController: controller})
+        const fetchMovies = await GetTrendingDay({abortController: controller})
         setMovies(fetchMovies.results); 
       } catch (error) {
         if (error.code !== "ERR_CANCELED") {
@@ -43,7 +44,7 @@ const HomePage = () => {
       {loading && <Loading/>}
       {error && <Error/>}
       <Title>Trending today</Title>
-      <TrendingTodayList movies={movies} />
+      {movies.length > 0 && <TrendingTodayList movies={movies} />}
     </>
   )
 }

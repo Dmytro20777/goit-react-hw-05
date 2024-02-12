@@ -1,0 +1,33 @@
+.movieDetailsContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movieDetailsImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+.movieDetailsTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movieDetailsOverview {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.movieDetailsPopularity {
+    font-size: 16px;
+    font-style: italic;
+    color: #666;
+}
