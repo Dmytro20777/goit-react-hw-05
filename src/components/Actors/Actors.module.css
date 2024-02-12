@@ -1,0 +1,46 @@
+.actorList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.actor {
+    margin-bottom: 20px;
+}
+
+.actorImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #f2f2f2;
+    
+    border: 4px solid #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    
+    min-width: 200px;
+    max-width: 300px;
+    
+    flex-grow: 1;
+    flex-shrink: 1;
+    
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.actorImage:hover {
+    /* transform: scale(1.1); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* cursor: pointer; */
+}
+
+.actorName {
+    font-size: 16px;
+}
