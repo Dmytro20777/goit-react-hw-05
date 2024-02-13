@@ -10,7 +10,6 @@ const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/i
 
 const MovieDetails = () => {
     const location = useLocation();
-    const backLinkRef = useRef(location.state);
 
     const { movieId } = useParams(); 
     const [movieDetails, setMovieDetails] = useState([]); 
@@ -38,12 +37,12 @@ const MovieDetails = () => {
 
     return (
         <>
-            <Link to={backLinkRef.current ?? '/'}>Back to movies</Link>
+            <Link to={location.state ?? "/"}>Back to movies</Link>
             
             <div className={styles.movieDetailsContainer}>
                 {loading && <Loading/>}
                 {error && <Error/>}
-                <Title className={styles.movieDetailsTitle}>Movie Details</Title>
+                <Title className={styles.movieDetailsTitle}>{movieDetails.title}</Title>
                 <img className={styles.movieDetailsImage} src={movieDetails.poster_path ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
                     : defaultImg} alt={movieDetails.original_title}/>
                 <p className={styles.movieDetailsOverview}><strong>Overview:</strong> {movieDetails.overview}</p>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GetTrendingDay } from "../../Appi";
 import { useLocation } from "react-router-dom";
-import { TrendingTodayList } from "../../components/TrendingTodayList/TrendingTodayList";
+import { MoviesList } from "../../components/MoviesList/MoviesList";
 import { Loading } from "../../components/Loading/Loading";
 import { Error } from "../../components/Error/Error";
 import { Title } from "../../components/Title/Title";
@@ -44,7 +44,7 @@ const HomePage = () => {
       {loading && <Loading/>}
       {error && <Error/>}
       <Title>Trending today</Title>
-      {movies.length > 0 && <TrendingTodayList movies={movies} />}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </>
   )
 }

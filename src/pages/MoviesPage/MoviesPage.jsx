@@ -5,7 +5,7 @@ import { GetMovieByValue } from "../../Appi";
 import { Loading } from "../../components/Loading/Loading";
 import { Error } from "../../components/Error/Error";
 import { Title } from "../../components/Title/Title";
-import { TrendingTodayList } from "../../components/TrendingTodayList/TrendingTodayList";
+import { MoviesList } from "../../components/MoviesList/MoviesList";
 
 
 
@@ -16,7 +16,6 @@ const MoviesPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const location = useLocation();
   const search = params.get("search") ?? "";
 
   const changeSubmit = newSearch => {
@@ -47,7 +46,7 @@ const MoviesPage = () => {
       {loading && <Loading/>}
       {error && <Error/>}
       {movies.length > 0 && <Title>Movies</Title>}
-      {movies.length > 0 && <TrendingTodayList movies={movies} state={location} />}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </div>
   )
 }
