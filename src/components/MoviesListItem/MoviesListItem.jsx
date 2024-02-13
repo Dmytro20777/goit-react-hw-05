@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-export const TrendingTodayItem = ({ id, title, poster_path }) => {
+export const MoviesListItem = ({ id, title }) => {
   const location = useLocation()
   return (
           <li>

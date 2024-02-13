@@ -1,6 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-// import css from './App.module.css';
+import { Route, Routes } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import { MovieCast } from "./components/MovieCast/MovieCast";
 import { MovieReviews } from "./components/Reviews/MovieReviews";

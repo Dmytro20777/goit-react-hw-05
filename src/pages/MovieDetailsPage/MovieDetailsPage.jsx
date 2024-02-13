@@ -10,6 +10,7 @@ const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/i
 
 const MovieDetails = () => {
     const location = useLocation();
+    const backLink = useRef(location.state);
 
     const { movieId } = useParams(); 
     const [movieDetails, setMovieDetails] = useState([]); 
@@ -37,7 +38,7 @@ const MovieDetails = () => {
 
     return (
         <>
-            <Link to={location.state ?? "/"}>Back to movies</Link>
+            <Link to={backLink.current ?? "/"}>Back to movies</Link>
             
             <div className={styles.movieDetailsContainer}>
                 {loading && <Loading/>}
@@ -52,7 +53,7 @@ const MovieDetails = () => {
             <Suspense fallback={<b>Loading...</b>}>
                 <nav>
                     <li>
-                        <NavLink to="reviews">Reviews</NavLink>
+                        <NavLink to={"reviews"}>Reviews</NavLink>
                     </li>
                     <li>
                         <NavLink to="cast">Cast</NavLink>
